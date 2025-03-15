@@ -1,4 +1,4 @@
-import { r as reactExports, _ as __rest, R as React, a as __assign, c as classNames, P as PropTypes, b as colorPropType } from "./index-I-OjYVUo.js";
+import { r as reactExports, _ as __rest, R as React, a as __assign, c as classNames, P as PropTypes, b as colorPropType } from "./index-CiKRmcYv.js";
 var CCard = reactExports.forwardRef(function(_a, ref) {
   var _b;
   var children = _a.children, className = _a.className, color = _a.color, textBgColor = _a.textBgColor, textColor = _a.textColor, rest = __rest(_a, ["children", "className", "color", "textBgColor", "textColor"]);

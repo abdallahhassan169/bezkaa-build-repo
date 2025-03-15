@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./DefaultLayout-D9cihayI.js","./CContainer-CopZpwLe.js","./DefaultLayout-CUaJ4U48.css","./Register-Dpam4VvG.js","./CRow-Bb3xtpYK.js","./CCardBody-CanmQiUv.js","./Page404-Bjcm-ULf.js","./cil-magnifying-glass-DQABYMt8.js","./Page500-bTRzm0I-.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./DefaultLayout-2QcYHQHr.js","./CContainer-BUdtFN55.js","./DefaultLayout-CUaJ4U48.css","./Register-DCrjA0Dw.js","./CRow-B-Kpm6wY.js","./CCardBody-Sy_aGZfG.js","./Page404-BWeprCqM.js","./cil-magnifying-glass-DQABYMt8.js","./Page500-CgyI7W7R.js"])))=>i.map(i=>d[i]);
 var __defProp = Object.defineProperty;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
 var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
@@ -39024,7 +39024,7 @@ const apiPost = async (url, params2, isForm) => {
 const img = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2048'%20width='48px'%20height='48px'%3e%3cpath%20fill='%23FFC107'%20d='M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z'/%3e%3cpath%20fill='%23FF3D00'%20d='M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z'/%3e%3cpath%20fill='%234CAF50'%20d='M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z'/%3e%3cpath%20fill='%231976D2'%20d='M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z'/%3e%3c/svg%3e";
 function Login() {
   const handleLogin = () => {
-    window.location.href = "http://localhost:3001/auth/google";
+    window.location.href = backend + "/auth/google";
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { width: "100%", alignItems: "center", display: "flex", justifyContent: "center" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     "img",
@@ -39911,10 +39911,10 @@ const EmailVerificationModal = ({ visible, onClose }) => {
     ] })
   ] }) });
 };
-const DefaultLayout = React$1.lazy(() => __vitePreload(() => import("./DefaultLayout-D9cihayI.js").then((n2) => n2.D), true ? __vite__mapDeps([0,1,2]) : void 0, import.meta.url));
-const Register = React$1.lazy(() => __vitePreload(() => import("./Register-Dpam4VvG.js"), true ? __vite__mapDeps([3,1,4,5]) : void 0, import.meta.url));
-const Page404 = React$1.lazy(() => __vitePreload(() => import("./Page404-Bjcm-ULf.js"), true ? __vite__mapDeps([6,1,4,7]) : void 0, import.meta.url));
-const Page500 = React$1.lazy(() => __vitePreload(() => import("./Page500-bTRzm0I-.js"), true ? __vite__mapDeps([8,1,4,7]) : void 0, import.meta.url));
+const DefaultLayout = React$1.lazy(() => __vitePreload(() => import("./DefaultLayout-2QcYHQHr.js").then((n2) => n2.D), true ? __vite__mapDeps([0,1,2]) : void 0, import.meta.url));
+const Register = React$1.lazy(() => __vitePreload(() => import("./Register-DCrjA0Dw.js"), true ? __vite__mapDeps([3,1,4,5]) : void 0, import.meta.url));
+const Page404 = React$1.lazy(() => __vitePreload(() => import("./Page404-BWeprCqM.js"), true ? __vite__mapDeps([6,1,4,7]) : void 0, import.meta.url));
+const Page500 = React$1.lazy(() => __vitePreload(() => import("./Page500-CgyI7W7R.js"), true ? __vite__mapDeps([8,1,4,7]) : void 0, import.meta.url));
 const App = () => {
   const { isColorModeSet, setColorMode } = useColorModes("coreui-free-react-admin-template-theme");
   const storedTheme = useSelector((state) => state.theme);

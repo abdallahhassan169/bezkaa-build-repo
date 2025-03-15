@@ -1,4 +1,4 @@
-import { j as jsxRuntimeExports } from "./index-I-OjYVUo.js";
+import { j as jsxRuntimeExports } from "./index-CiKRmcYv.js";
 function Payment() {
   const handlePlanSelection = (planName) => {
     const phoneNumber = "+201550411364";

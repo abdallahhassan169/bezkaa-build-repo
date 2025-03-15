@@ -1,12 +1,12 @@
-import { r as reactExports, j as jsxRuntimeExports, al as Modal, aD as Box, aC as Button, ae as Typography, y as CForm, aF as CFormLabel, F as CButton, h as CSpinner, aE as axios } from "./index-I-OjYVUo.js";
-import { l as lib, C as ContentCopyIcon, S as Snackbar, A as Alert } from "./index-CvoAc4-T.js";
-import { M as Markdown } from "./index-theaUQs8.js";
-import { C as CRow, a as CCol } from "./CRow-Bb3xtpYK.js";
-import { C as CCard, a as CCardBody } from "./CCardBody-CanmQiUv.js";
-import { C as CCardHeader } from "./CCardHeader-0owQy5PB.js";
-import { C as CFormTextarea } from "./CFormTextarea-Ciogspkk.js";
-import { C as CFormSelect } from "./CFormSelect-CAU_uUgE.js";
-import "./Grow-CqnyeZGf.js";
+import { r as reactExports, j as jsxRuntimeExports, al as Modal, aD as Box, aC as Button, ae as Typography, y as CForm, aF as CFormLabel, D as CFormInput, F as CButton, h as CSpinner, p as CIcon, aG as apiPost } from "./index-CiKRmcYv.js";
+import { l as lib, C as ContentCopyIcon, S as Snackbar, A as Alert } from "./index-BYIgjBCl.js";
+import { M as Markdown } from "./index-B_tby9eX.js";
+import { s as services_cost, c as cilStar } from "./config-CB4qC7zh.js";
+import { C as CRow, a as CCol } from "./CRow-B-Kpm6wY.js";
+import { C as CCard, a as CCardBody } from "./CCardBody-Sy_aGZfG.js";
+import { C as CCardHeader } from "./CCardHeader-DwUN0K1f.js";
+import { C as CFormTextarea } from "./CFormTextarea-CX5y3TI0.js";
+import "./Grow-BU239NWR.js";
 const style = {
   position: "absolute",
   top: "50%",
@@ -20,8 +20,10 @@ const style = {
   p: 4,
   overflowY: "auto",
   display: "flex",
+  textAlign: "center",
   flexDirection: "column",
-  direction: "rtl"
+  direction: "rtl",
+  color: "black"
 };
 function ResultModal({ text, open, handleClose }) {
   const [selectedAction, setSelectedAction] = reactExports.useState("text");
@@ -97,24 +99,32 @@ function ResultModal({ text, open, handleClose }) {
     /* @__PURE__ */ jsxRuntimeExports.jsx(Snackbar, { open: openSnackbar, autoHideDuration: 2e3, onClose: handleCloseSnackbar, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Alert, { onClose: handleCloseSnackbar, severity: "success", sx: { width: "100%" }, children: "تم النسخ بنجاح!" }) })
   ] });
 }
-const SEO = () => {
+const Transelation = () => {
   const [inputText, setInputText] = reactExports.useState("");
-  const [selectedAction, setSelectedAction] = reactExports.useState("keywords");
+  const [targetLanguage, setTargetLanguage] = reactExports.useState("");
   const [loading, setLoading] = reactExports.useState(false);
   const [result, setResult] = reactExports.useState("");
   const [showModal, setShowModal] = reactExports.useState(false);
+  const [conv, setConv] = reactExports.useState();
   const handleInputChange = (e) => {
     setInputText(e.target.value);
   };
-  const handleSubmit = async () => {
+  const handleLanguageChange = (e) => {
+    setTargetLanguage(e.target.value);
+  };
+  const handleSubmit = async (e) => {
+    var _a, _b;
+    e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(`http://127.0.0.1:3001/marketing/seo`, {
+      const response = await apiPost("/content/translate", {
         text: inputText,
-        action: selectedAction
+        targetLanguage,
+        conv_id: conv
       });
-      setResult(response.data.response);
-      setShowModal(true);
+      setResult((_a = response == null ? void 0 : response.data) == null ? void 0 : _a.body);
+      setConv((_b = response == null ? void 0 : response.data) == null ? void 0 : _b.current_conv);
+      if (response == null ? void 0 : response.data) setShowModal(true);
     } catch (error) {
       console.error("Error:", error);
     } finally {
@@ -123,37 +133,55 @@ const SEO = () => {
   };
   const handleReset = () => {
     setInputText("");
+    setTargetLanguage("");
     setResult("");
-    setSelectedAction("keywords");
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(CRow, { style: { direction: "rtl" }, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(CCol, { xs: 12, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CCard, { className: "mb-4", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CCardHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "أداة تحسين محركات البحث (SEO)" }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CCardBody, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CForm, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CCardHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "أداة الترجمة" }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CCardBody, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CForm, { onSubmit: handleSubmit, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(CFormLabel, { htmlFor: "seo-textarea", children: "أدخل النص:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(CFormLabel, { htmlFor: "translate-textarea", children: "النص المراد ترجمته:" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             CFormTextarea,
             {
-              id: "seo-textarea",
+              id: "translate-textarea",
               rows: 5,
-              placeholder: "اكتب النص الذي تريد تحليله هنا...",
+              placeholder: "اكتب النص هنا...",
               value: inputText,
-              onChange: handleInputChange
+              onChange: handleInputChange,
+              required: true
             }
           )
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(CFormLabel, { htmlFor: "seo-action", children: "اختر الإجراء:" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(CFormSelect, { "aria-label": "Default select example", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { children: "اختر من القائمة" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "keywords", children: "تحليل الكلمات المفتاحية" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "translate", children: "ترجمة النص" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "description", children: "تحسين الوصف التعريفي" })
-          ] })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(CFormLabel, { htmlFor: "target-language", children: "اختر اللغة المستهدفة:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            CFormInput,
+            {
+              type: "text",
+              id: "target-language",
+              placeholder: "أدخل اللغة المستهدفة (مثل: en, fr, ar)",
+              value: targetLanguage,
+              onChange: handleLanguageChange,
+              required: true
+            }
+          )
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-3 d-flex gap-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(CButton, { color: "primary", onClick: handleSubmit, disabled: loading, children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(CSpinner, { size: "sm" }) : "إرسال" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(CButton, { color: "primary", type: "submit", disabled: loading, children: [
+            loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(CSpinner, { size: "sm" }) : "إرسال",
+            services_cost["youtube-trans"],
+            " ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              CIcon,
+              {
+                icon: cilStar,
+                className: "me-2",
+                style: { color: "gold", fontSize: "50px" }
+              }
+            )
+          ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(CButton, { color: "secondary", onClick: handleReset, children: "إعادة تعيين" })
         ] })
       ] }) })
@@ -162,5 +190,5 @@ const SEO = () => {
   ] });
 };
 export {
-  SEO as default
+  Transelation as default
 };

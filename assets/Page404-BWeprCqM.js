@@ -1,13 +1,17 @@
-import { j as jsxRuntimeExports, z as CInputGroup, A as CInputGroupText, p as CIcon, D as CFormInput, F as CButton } from "./index-I-OjYVUo.js";
-import { C as CContainer } from "./CContainer-CopZpwLe.js";
-import { C as CRow, a as CCol } from "./CRow-Bb3xtpYK.js";
+import { j as jsxRuntimeExports, z as CInputGroup, A as CInputGroupText, p as CIcon, D as CFormInput, F as CButton } from "./index-CiKRmcYv.js";
+import { C as CContainer } from "./CContainer-BUdtFN55.js";
+import { C as CRow, a as CCol } from "./CRow-B-Kpm6wY.js";
 import { c as cilMagnifyingGlass } from "./cil-magnifying-glass-DQABYMt8.js";
-const Page500 = () => {
+const Page404 = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "bg-body-tertiary min-vh-100 d-flex flex-row align-items-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CContainer, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CRow, { className: "justify-content-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(CCol, { md: 6, children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "clearfix", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "float-start display-3 me-4", children: "500" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "pt-3", children: "Houston, we have a problem!" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-body-secondary float-start", children: "The page you are looking for is temporarily unavailable." })
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "clearfix", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "float-start display-3 me-4", children: "404" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("h4", { className: "pt-3", children: [
+        "Oops! You",
+        "'",
+        "re lost."
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-body-secondary float-start", children: "The page you are looking for was not found." })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(CInputGroup, { className: "input-prepend", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CInputGroupText, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CIcon, { icon: cilMagnifyingGlass }) }),
@@ -17,5 +21,5 @@ const Page500 = () => {
   ] }) }) }) });
 };
 export {
-  Page500 as default
+  Page404 as default
 };
